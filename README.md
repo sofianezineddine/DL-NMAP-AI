@@ -1,6 +1,7 @@
 
 # DL-NMAP-AI: Intelligent Nmap Command Generation & Validation
 
+![alt text](system-architecture.jpg)
 ![Banner Placeholder](https://via.placeholder.com/1200x300/020617/FFFFFF?text=DL-NMAP-AI+Command+Center)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
