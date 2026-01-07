@@ -17,6 +17,8 @@ DL-NMAP-AI is an advanced, AI-powered system designed to intelligently generate 
 
 *   **Intent Classification:** Utilizes Google Gemini to categorize user requests into \'Irrelevant\', \'Easy\', \'Medium\', or \'Hard\' Nmap scanning intents.
 *   **Nmap Command Generation:** Employs a LoRA-tuned T5 model to translate natural language intents into precise Nmap commands.
+
+    ![Training Notebook](docs/images/training-notebook.png)
 *   **Knowledge Graph (KG-RAG) Validation:** Semantically validates generated Nmap commands against a predefined ontology of Nmap options, privileges, and conflicts, ensuring correctness and adherence to best practices.
 *   **Diffusion Synthesis for Complex Intents:** Iteratively refines Nmap commands for \'Hard\' intents using a feedback loop between the LoRA model and KG-RAG validation.
 *   **Functional Validation (MCP):** Executes generated Nmap commands in a controlled environment via a Model Context Protocol (MCP) server to verify their real-world functionality.
@@ -89,14 +91,16 @@ GOOGLE_API_KEY=your_google_gemini_api_key
 *   **`NEO4J_PASSWORD`**: Your Neo4j password.
 *   **`GOOGLE_API_KEY`**: Your API key for Google Gemini (Generative AI).
 
-### 3. Neo4j Knowledge Graph Population
-
+#### 3. Neo4j Knowledge Graph Population
 Ensure your Neo4j database is running. Then, execute the `nmap_ontology_population.cypher` script to populate the knowledge graph. You can do this via the Neo4j Browser or `cypher-shell`.
 
 ```bash
 # Example using cypher-shell (replace with your actual connection details)
-cypher-shell -a \"bolt://localhost:7687\" -u neo4j -p your_neo4j_password < nmap_ontology_population.cypher
+cypher-shell -a "bolt://localhost:7687" -u neo4j -p your_neo4j_password < nmap_ontology_population.cypher
 ```
+
+#### Knowledge Graph Visualization
+![Neo4j Knowledge Graph](docs/images/neo4j-knowledge-graph.png)
 
 ### 4. Frontend Setup
 
@@ -154,6 +158,12 @@ The web application will typically open in your browser at `http://localhost:517
 ### Demonstration: Web App Interaction
 
 Once both the backend and frontend are running, open your browser to the frontend URL. You can then enter your Nmap scan intents and target IPs in the provided input fields. The system will process your request, generate and validate the Nmap command, and display the results in a chat-like interface.
+
+#### Initial Interface
+![Web App Initial](docs/images/web-app-initial.png)
+
+#### Command Generation & Interaction
+![Web App Interaction](docs/images/web-app-interaction.png)
 
 ## Project Structure
 
