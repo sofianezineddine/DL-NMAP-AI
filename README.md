@@ -1,5 +1,5 @@
 
-# DL-NMAP-AI: Intelligent Nmap Command Generation & Validation
+# NMAP-AI: Intelligent Nmap Command Generation & Validation
 
 ![alt text](system-architecture.jpg)
 
