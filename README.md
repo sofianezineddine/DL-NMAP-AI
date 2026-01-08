@@ -8,6 +8,8 @@
 [![Python](https://img.shields.io/badge/Python-3.9%2B-blue)](https://www.python.org/)
 [![React](https://img.shields.io/badge/React-18%2B-blue)](https://react.dev/)
 
+**Video Demonstartion:** https://drive.google.com/file/d/1qAeVtsf2Y62EmkX_rvUo5nXjqqCh2P4V/view?usp=sharing
+
 ## Short Description
 
 DL-NMAP-AI is an advanced, AI-powered system designed to intelligently generate and validate Nmap commands based on natural language intent. It leverages a multi-agent architecture, combining large language models (LLMs) for intent classification and command refinement, a Knowledge Graph (KG-RAG) for semantic validation, and a LoRA-tuned T5 model for specialized Nmap command synthesis. The system also includes a functional validation component via an MCP server and a modern React-based web interface for intuitive interaction.
