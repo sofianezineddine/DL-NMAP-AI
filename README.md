@@ -156,13 +156,27 @@ The web application will typically open in your browser at `http://localhost:517
 
 ### Demonstration: Web App Interaction
 
-Once both the backend and frontend are running, open your browser to the frontend URL. You can then enter your Nmap scan intents and target IPs in the provided input fields. The system will process your request, generate and validate the Nmap command, and display the results in a chat-like interface.
+The DL-NMAP-AI web interface provides a seamless, chat-like experience for generating and validating Nmap commands. Below are several examples demonstrating the system's capabilities across different intent levels.
 
-#### Initial Interface
-![Web App Initial](docs/images/web-app-initial.png)
+#### 1. Simple Intent: Basic Network Connectivity
+For straightforward requests like "ping the target", the system identifies the intent as **Easy** and generates a standard Nmap ping scan.
+![Simple Ping Intent](docs/images/nmap-image/simple-ping-intent.png)
+> **Explanation:** The user enters a simple natural language request. The **Easy Agent** quickly translates this into `nmap 192.168.0.4/`, which is then semantically and functionally verified.
 
-#### Command Generation & Interaction
-![Web App Interaction](docs/images/web-app-interaction.png)
+#### 2. Medium Intent: Service and Version Detection
+When the request involves specific ports and scanning techniques (e.g., "Scan ports for SSH, SNMP using SYN scan and version detection"), the system classifies it as **Medium**.
+![Medium Scan Intent](docs/images/nmap-image/medium-scan-intent.png)
+> **Explanation:** The **Medium Agent** handles more specific requirements, correctly mapping "SSH" and "SNMP" to their respective ports (22, 161) and applying the `-sS` (SYN scan) and `-sV` (Version detection) flags.
+
+#### 3. Complex Intent: Advanced Security Auditing
+For highly complex requests involving multiple scripts, OS detection, and network diagnostics, the **Hard Agent** is engaged.
+![Complex Scan Intent](docs/images/nmap-image/complex-scan-intent.png)
+> **Explanation:** This example shows a request for SSH/FTP scanning, OS detection, vulnerability scripts, and traceroute. The system generates a comprehensive command: `nmap -p 22,21 -O --script vuln --traceroute 192.168.0.0/28`. Both semantic and functional validations are passed, ensuring the command is safe and executable.
+
+#### 4. Handling Out-of-Context Requests
+The system includes a safety mechanism to filter out irrelevant or malicious natural language inputs that do not pertain to Nmap scanning.
+![Out of Context Intent](docs/images/nmap-image/out-of-context-intent.png)
+> **Explanation:** When a user enters nonsensical or unrelated text (e.g., "hhhhhhhhhhhhh"), the intent classifier correctly identifies it as **OUT_OF_CONTEXT**, preventing the generation of invalid commands and maintaining system integrity.
 
 ## Project Structure
 
