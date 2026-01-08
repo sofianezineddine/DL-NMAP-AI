@@ -8,7 +8,7 @@
 [![Python](https://img.shields.io/badge/Python-3.9%2B-blue)](https://www.python.org/)
 [![React](https://img.shields.io/badge/React-18%2B-blue)](https://react.dev/)
 
-**Video Demonstartion:** https://drive.google.com/file/d/1qAeVtsf2Y62EmkX_rvUo5nXjqqCh2P4V/view?usp=sharing
+*   **Video Demonstartion:** https://drive.google.com/file/d/1uz7iRu-MtQQokUgfqjc5yP3jAvN3okmY/view
 
 ## Short Description
 
